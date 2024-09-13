@@ -355,11 +355,11 @@
             .team-member-profile-container .header {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: space-around;
                 background-color: var(--primary-color);
                 border-radius: 20px;
-                padding: 10px;
-                width: 100%;
+                padding: 15px;
+                gap: 15px;
             }
 
             .team-member-profile-container .description {
@@ -371,14 +371,14 @@
             }
 
             .info-container {
-                display: flex;
-                flex-direction: column;
+                display: block;
                 align-items: center;
             }
 
             .name-container h1 {
                 color: var(--secondary-color);
                 font-size: 24px;
+                font-weight: bold;
             }
 
             .icon-container {
@@ -386,7 +386,7 @@
                 list-style: none;
                 margin-left: auto;
                 padding-left: 0px;
-                gap: 10px;
+                gap: 5px;
             }
 
             .icon-container li {
@@ -403,6 +403,7 @@
                 width: 140px;
                 height: 140px;
                 border-radius: 50%;
+                border: 4px solid var(--secondary-color);
             }
 
             /* Responsive Styles */
@@ -440,6 +441,10 @@
                     font-size: 20px;
                 }
 
+                .name-container h2 {
+                    font-size: 15px;
+                }
+
                 .icon-container {
                     margin-left: 0;
                     padding-left: 0;
@@ -463,6 +468,10 @@
 
                 .name-container h1 {
                     font-size: 18px;
+                }
+
+                .name-container h2 {
+                    font-size: 14px;
                 }
 
                 .icon-container li i {
@@ -509,10 +518,11 @@
                                  <div class="info-container">
                                      <div class="name-container">
                                          <h1>Colton Breitkreuz</h1>
+                                         <h2>CEO</h2>
                                      </div>
                                      <ul class="icon-container">
                                          <li><i class="material-icons">laptop</i></li>
-                                         <li><i class="material-icons">memory</i></li>
+                                         <li><i class="material-icons">power</i></li>
                                          <li><i class="material-icons">rocket</i></li>
                                      </ul>
                                  </div>
@@ -536,10 +546,11 @@
                                  <div class="info-container">
                                      <div class="name-container">
                                          <h1>Dylan Haussecker</h1>
+                                         <h2>Hardware Lead</h2>
                                      </div>
                                      <ul class="icon-container">
                                          <li><i class="material-icons">laptop</i></li>
-                                         <li><i class="material-icons">memory</i></li>
+                                         <li><i class="material-icons">power</i></li>
                                          <li><i class="material-icons">rocket</i></li>
                                      </ul>
                                  </div>
@@ -563,11 +574,10 @@
                                  <div class="info-container">
                                      <div class="name-container">
                                          <h1>Nathan Tsandelis</h1>
+                                         <h2>Software Lead</h2>
                                      </div>
                                      <ul class="icon-container">
                                          <li><i class="material-icons">laptop</i></li>
-                                         <li><i class="material-icons">memory</i></li>
-                                         <li><i class="material-icons">rocket</i></li>
                                      </ul>
                                  </div>
                              </div>
