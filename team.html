@@ -28,6 +28,7 @@
                 --background-color: var(--blue-crayola);
                 --cta-color: var(--eerie-black);
                 --card-color: var(--white);
+                --text-color: var(--white);
             }
 
             html, body, div, span, h1,
@@ -45,6 +46,8 @@
             }
 
             body {
+                display: flex;
+                flex-direction: column;
                 line-height: 1.5;
                 background-color: var(--background-color);
                 font-family: Arial, sans-serif;
@@ -87,7 +90,7 @@
                 align-items: inherit;
                 text-decoration: none;
             }
-            
+
             #header-logo-title h1 {
                 margin: 0;
                 font-size: 21px;
@@ -121,6 +124,53 @@
                 color: var(--darkened-primary-color);
             }
 
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                #header {
+                    padding: 10px;
+                }
+
+                #header-logo-title h1 {
+                    font-size: 18px;
+                }
+
+                #header-logo {
+                    height: 25px;
+                }
+
+                #header-links-container {
+                    flex-direction: column;
+                    gap: 10px;
+                    align-items: flex-start;
+                }
+
+                #header-links-container a {
+                    font-size: 14px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                #header {
+                    padding: 8px;
+                }
+
+                #header-logo-title h1 {
+                    font-size: 16px;
+                }
+
+                #header-logo {
+                    height: 20px;
+                }
+
+                #header-links-container {
+                    gap: 8px;
+                }
+
+                #header-links-container a {
+                    font-size: 12px;
+                }
+            }
+
             /* Footer */
             #footer {
                 display: flex;
@@ -128,7 +178,7 @@
                 align-items: center center;
                 background-color: var(--secondary-color);
                 padding: 15px;
-                position: fixed;
+                
                 bottom: 0;
                 left: 0;
                 width: 100%;
@@ -201,6 +251,7 @@
                 }
 
             /* Team Section */
+
             #team-section {
                 display: flex;
                 flex-wrap: wrap;
@@ -209,39 +260,34 @@
                 padding: 0;
             }
 
-                .team-member-card {
-                    width: 30%;
-                    display: flex;
-                    align-items: center;
-                    background-color: var(--card-color);
-                    padding: 20px;
-                    margin: 15px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    border-radius: 20px;
-                    gap: 20px;
-                }
+            .team-member-card {
+                width: 30%;
+                display: flex;
+                align-items: center;
+                background-color: var(--card-color);
+                padding: 20px;
+                margin: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 20px;
+                gap: 20px;
+            }
 
-                .team-member-card.profile {
-                    width: 90%;
-                }
+            .team-member-card.profile {
+                width: 90%;
+            }
 
-                .team-member-card .image {
-                    width: 60%;
-                }
+            .team-member-card .image {
+                width: 60%;
+            }
 
-                    .team-member-card .image img {
-                        width: 100%;
-                        height: 100%;
-                    }
+            .team-member-card .image img {
+                width: 100%;
+                height: 100%;
+            }
 
-                .team-member-card .description {
-                    width: 60%;
-                    padding-left: 15px;
-                }
-
-                .team-member-card:nth-child(2n) {
-                    flex-direction: row-reverse;
-                }
+            .team-member-card:nth-child(2n) {
+                flex-direction: row-reverse;
+            }
 
             .team-member-profile-container {
                 display: flex;
@@ -250,45 +296,126 @@
                 width: 100%;
                 background-color: var(--secondary-color);
                 padding: 20px;
+                border-radius: 20px;
             }
 
-                .team-member-profile-container .header {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width: 100%;
-                    margin-bottom: 10px;
-                }
+            .team-member-profile-container .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: var(--primary-color);
+                border-radius: 20px;
+                padding: 10px;
+                width: 100%;
+            }
+
+            .team-member-profile-container .description {
+                width: 60%;
+            }
+
+            .team-member-profile-container .description p {
+                color: var(--text-color);
+            }
 
             .info-container {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
             }
 
             .name-container h1 {
-                color: var(--primary-color);
+                color: var(--secondary-color);
                 font-size: 24px;
-                margin-left: 15px;
             }
 
             .icon-container {
                 display: flex;
                 list-style: none;
                 margin-left: auto;
-                padding-left: 15px;
+                padding-left: 0px;
                 gap: 10px;
             }
 
-                .icon-container li i {
-                    font-size: 24px;
-                    color: var(--primary-color);
+            .icon-container li {
+                display: flex;
+                align-items: center;
+            }
+
+            .icon-container li i {
+                font-size: 24px;
+                color: var(--secondary-color);
+            }
+
+            .header .picture img {
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .team-member-card {
+                    width: 90%;
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
 
-                .header .picture img {
-                    width: 140px;
-                    height: 140px;
-                    border-radius: 50%;
+                .team-member-card .image {
+                    width: 100%;
                 }
+
+                .team-member-card .image img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .team-member-profile-container .header {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .team-member-profile-container .description {
+                    width: 100%;
+                    padding-left: 0;
+                }
+
+                .info-container {
+                    align-items: center;
+                }
+
+                .name-container h1 {
+                    font-size: 20px;
+                }
+
+                .icon-container {
+                    margin-left: 0;
+                    padding-left: 0;
+                    justify-content: center;
+                    gap: 5px;
+                }
+
+                .icon-container li i {
+                    font-size: 20px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .team-member-card {
+                    width: 100%;
+                }
+
+                .team-member-profile-container .header {
+                    padding: 10px;
+                }
+
+                .name-container h1 {
+                    font-size: 18px;
+                }
+
+                .icon-container li i {
+                    font-size: 18px;
+                }
+            }
 
     </style>
     </head>
@@ -312,84 +439,94 @@
                 </div>
              </header>
 
-             <!-- Cards -->
-            <section id="team-section">
-                <section class="team-member-card profile">
-                    <div class="image">
-                        <img src="images/ceo-role.jpg" alt="Ceo Role Image"/>
-                    </div>
-                    <div class="team-member-profile-container">
-                        <div class="header">
-                            <div class="picture">
-                                <img src="images/colton.jpg" alt="Colton"/>
-                            </div>
-                            <div class="info-container">
-                                <div class="name-container">
-                                    <h1>Colton Breitkreuz</h1>
-                                </div>
-                                <ul class="icon-container">
-                                    <li><i class="material-icons">laptop</i></li>
-                                    <li><i class="material-icons">memory</i></li>
-                                    <li><i class="material-icons">rocket</i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description">
-                            
-                        </div>
-                    </div>
-                </section>
-                <section class="team-member-card profile">
-                    <div class="image">
-                        <img src="images/hardware-lead.jpg" alt="Hardware Lead Image"/>
-                    </div>
-                    <div class="team-member-profile-container">
-                        <div class="header">
-                            <div class="picture">
-                                <img src="images/dylan.jpg" alt="Colton"/>
-                            </div>
-                            <div class="info-container">
-                                <div class="name-container">
-                                    <h1>Dylan Haussecker</h1>
-                                </div>
-                                <ul class="icon-container">
-                                    <li><i class="material-icons">laptop</i></li>
-                                    <li><i class="material-icons">memory</i></li>
-                                    <li><i class="material-icons">rocket</i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description">
+             <!-- Main -->
+              <main>
 
-                        </div>
-                    </div>
-                </section>
-                <section class="team-member-card profile">
-                    <div class="image">
-                        <img src="images/software-lead.jpg" alt="Software Lead Image"/>
-                    </div>
-                    <div class="team-member-profile-container">
-                        <div class="header">
-                            <div class="picture">
-                                <img src="images/nathan.jpg" alt="Colton"/>
-                            </div>
-                            <div class="info-container">
-                                <div class="name-container">
-                                    <h1>Nathan Tsandelis</h1>
-                                </div>
-                                <ul class="icon-container">
-                                    <li><i class="material-icons">laptop</i></li>
-                                    <li><i class="material-icons">memory</i></li>
-                                    <li><i class="material-icons">rocket</i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description">
-                            
-                        </div>
-                    </div>
-                </section>
-              </section>
+                  <!-- Cards -->
+                 <section id="team-section">
+                     <section class="team-member-card profile">
+                         <div class="image">
+                             <img src="images/ceo-role.jpg" alt="Ceo Role Image"/>
+                         </div>
+                         <div class="team-member-profile-container">
+                             <div class="header">
+                                 <div class="picture">
+                                     <img src="images/colton.jpg" alt="Colton"/>
+                                 </div>
+                                 <div class="info-container">
+                                     <div class="name-container">
+                                         <h1>Colton Breitkreuz</h1>
+                                     </div>
+                                     <ul class="icon-container">
+                                         <li><i class="material-icons">laptop</i></li>
+                                         <li><i class="material-icons">memory</i></li>
+                                         <li><i class="material-icons">rocket</i></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="description">
+                                 <p>
+                                    Colton Breitkreuz, an Electrical and Computer Science student at the University of Saskatchewan, is set to graduate in May 2025. Transitioning from his role as System Lead on RADSAT-SK, Colton now spearheads Taulab as its CEO. With a keen vision for innovation, Colton is dedicated to transforming how companies approach project management within the IoT fleet management sector. His leadership is focused on fostering growth, enhancing development opportunities, and driving impactful change in the industry. Colton’s forward-thinking approach promises to reshape project management paradigms and unlock new possibilities for future advancements.
+                                 </p>
+                             </div>
+                         </div>
+                     </section>
+                     <section class="team-member-card profile">
+                         <div class="image">
+                             <img src="images/hardware-lead.jpg" alt="Hardware Lead Image"/>
+                         </div>
+                         <div class="team-member-profile-container">
+                             <div class="header">
+                                 <div class="picture">
+                                     <img src="images/dylan.jpg" alt="Colton"/>
+                                 </div>
+                                 <div class="info-container">
+                                     <div class="name-container">
+                                         <h1>Dylan Haussecker</h1>
+                                     </div>
+                                     <ul class="icon-container">
+                                         <li><i class="material-icons">laptop</i></li>
+                                         <li><i class="material-icons">memory</i></li>
+                                         <li><i class="material-icons">rocket</i></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="description">
+                                 <p>
+                                    Dylan Haussecker, a graduate in Electrical Engineering and Computer Science from the University of Saskatchewan, brings his deep-seated passion for space to his role as Hardware Lead at Taulab. With a strong background in hardware design and development, Dylan is instrumental in driving the technical excellence of Taulab’s IoT fleet management solutions. His enthusiasm for space exploration fuels his innovative approach, helping to advance the company’s mission to revolutionize fleet management with cutting-edge technology. Dylan’s expertise ensures that Taulab’s hardware meets the highest standards of performance and reliability.
+                                 </p>
+                             </div>
+                         </div>
+                     </section>
+                     <section class="team-member-card profile">
+                         <div class="image">
+                             <img src="images/software-lead.jpg" alt="Software Lead Image"/>
+                         </div>
+                         <div class="team-member-profile-container">
+                             <div class="header">
+                                 <div class="picture">
+                                     <img src="images/nathan.jpg" alt="Colton"/>
+                                 </div>
+                                 <div class="info-container">
+                                     <div class="name-container">
+                                         <h1>Nathan Tsandelis</h1>
+                                     </div>
+                                     <ul class="icon-container">
+                                         <li><i class="material-icons">laptop</i></li>
+                                         <li><i class="material-icons">memory</i></li>
+                                         <li><i class="material-icons">rocket</i></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="description">
+                                 <p>
+                                    Nathan Tsandelis is a Computer Engineering graduate from the University of Saskatchewan, where he honed his skills in developing innovative software solutions. As the Software Lead at Taulab, Nathan leverages his expertise to drive the creation of impactful and creative software that advances the company's mission in IoT fleet management. With a passion for staying active and a flair for creativity, Nathan is dedicated to crafting solutions that not only meet technical needs but also positively impact the world. His leadership ensures that Taulab remains at the forefront of technological advancement, delivering software that makes a meaningful difference.
+                                 </p>
+                             </div>
+                         </div>
+                     </section>
+                   </section>
+              </main>
 
              <!-- Footer -->
              <footer id="footer">
@@ -415,7 +552,7 @@
                         <li><a href="/comingsoon">Contact</a></li>
                     </ul>
                 </div>
-             </footer>
+            </footer>
         </div>
     </body>
 </html>
