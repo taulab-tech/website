@@ -4,6 +4,7 @@
         <title>Company Page - by taulab</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <style>
             * {
                 box-sizing: border-box;
@@ -25,7 +26,8 @@
                 --accent-color: var(--onyx);
                 --complementary-color: var(--maize);
                 --background-color: var(--blue-crayola);
-                --cta-color: var(--blue-crayola);
+                --cta-color: var(--eerie-black);
+                --card-color: var(--white);
             }
 
             html, body, div, span, h1,
@@ -48,6 +50,11 @@
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
+            }
+
+            .material-icons {
+                font-size: 24px;
+                color: var(--primary-color);
             }
 
             /* Page Wrapper */
@@ -194,30 +201,42 @@
                 }
 
             /* Team Section */
-
-            #team-section-container {
+            #team-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
                 margin: 0;
                 padding: 0;
             }
 
-            .team-member-card {
-                display: flex;
-                align-items: center;
-            }
-            
-                .team-member-card image {
-                    order: 1;
-                    width: 40%;
+                .team-member-card {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    background-color: var(--card-color);
+                    padding: 20px;
+                    margin: 15px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border-radius: 20px;
+                    gap: 20px;
+                }
+
+                .team-member-card.profile {
+                    width: 90%;
+                }
+
+                .team-member-card .image {
+                    width: 60%;
                 }
 
                     .team-member-card .image img {
                         width: 100%;
+                        height: 100%;
                     }
 
                 .team-member-card .description {
-                    order: 2;
-                    max-width: 48em;
                     width: 60%;
+                    padding-left: 15px;
                 }
 
                 .team-member-card:nth-child(2n) {
@@ -226,27 +245,52 @@
 
             .team-member-profile-container {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
+                width: 100%;
                 background-color: var(--secondary-color);
+                padding: 20px;
             }
 
                 .team-member-profile-container .header {
                     display: flex;
-                    align-items: flex-start;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 100%;
+                    margin-bottom: 10px;
                 }
 
-                    .team-member-profile-container .header .name-container {
-                        display: inline-block;
-                        align-items: center;
-                    }
+            .info-container {
+                display: flex;
+                flex-direction: column;
+            }
 
-                    .team-member-profile-container .header .name-container h1 {
-                        color: var(--primary-color);
-                    }
+            .name-container h1 {
+                color: var(--primary-color);
+                font-size: 24px;
+                margin-left: 15px;
+            }
 
-            
+            .icon-container {
+                display: flex;
+                list-style: none;
+                margin-left: auto;
+                padding-left: 15px;
+                gap: 10px;
+            }
 
-        </style>
+                .icon-container li i {
+                    font-size: 24px;
+                    color: var(--primary-color);
+                }
+
+                .header .picture img {
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                }
+
+    </style>
     </head>
     <body>
 
@@ -269,51 +313,80 @@
              </header>
 
              <!-- Cards -->
-              <section id="team-section">
-                <section class="team-member-card">
+            <section id="team-section">
+                <section class="team-member-card profile">
                     <div class="image">
-                        <img src="/images/ceo-role.jpg"/>
-                    </div>
-                    <div class="description">
-
-                    </div>
-                </section>
-                <section class="team-member-card">
-                    <div class="image">
-                        <img src="/images/hardware-role.jpeg"/>
+                        <img src="images/ceo-role.jpg" alt="Ceo Role Image"/>
                     </div>
                     <div class="team-member-profile-container">
                         <div class="header">
-                            <header class="name-container">
-                                <h1>Dylan Haussecker</h1>
-                            </header>
-                            <ul class="icon-container">
-                                <li><i class="fas fa-laptop-code"></i></li>
-                                <li><i class="fas fa-microchip"></i></li>
-                            </ul>
+                            <div class="picture">
+                                <img src="images/colton.jpg" alt="Colton"/>
+                            </div>
+                            <div class="info-container">
+                                <div class="name-container">
+                                    <h1>Colton Breitkreuz</h1>
+                                </div>
+                                <ul class="icon-container">
+                                    <li><i class="material-icons">laptop</i></li>
+                                    <li><i class="material-icons">memory</i></li>
+                                    <li><i class="material-icons">rocket</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="team-member-card profile">
+                    <div class="image">
+                        <img src="images/hardware-lead.jpg" alt="Hardware Lead Image"/>
+                    </div>
+                    <div class="team-member-profile-container">
+                        <div class="header">
+                            <div class="picture">
+                                <img src="images/dylan.jpg" alt="Colton"/>
+                            </div>
+                            <div class="info-container">
+                                <div class="name-container">
+                                    <h1>Dylan Haussecker</h1>
+                                </div>
+                                <ul class="icon-container">
+                                    <li><i class="material-icons">laptop</i></li>
+                                    <li><i class="material-icons">memory</i></li>
+                                    <li><i class="material-icons">rocket</i></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="description">
 
                         </div>
-                    </div>  
+                    </div>
                 </section>
-                <section class="team-member-card">
+                <section class="team-member-card profile">
                     <div class="image">
-                        <img src="/images/software-role.jpeg"/>
+                        <img src="images/software-lead.jpg" alt="Software Lead Image"/>
                     </div>
                     <div class="team-member-profile-container">
                         <div class="header">
-                            <header class="name-container">
-                                <h1>Nathan Tsandelis</h1>
-                            </header>
-                            <ul class="icon-container">
-                                <li><i class="fas fa-laptop-code"></i></li>
-                                <li><i class="fas fa-microchip"></i></li>
-                            </ul>
+                            <div class="picture">
+                                <img src="images/nathan.jpg" alt="Colton"/>
+                            </div>
+                            <div class="info-container">
+                                <div class="name-container">
+                                    <h1>Nathan Tsandelis</h1>
+                                </div>
+                                <ul class="icon-container">
+                                    <li><i class="material-icons">laptop</i></li>
+                                    <li><i class="material-icons">memory</i></li>
+                                    <li><i class="material-icons">rocket</i></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="description">
-
+                        <div class="description">
+                            
+                        </div>
                     </div>
                 </section>
               </section>
