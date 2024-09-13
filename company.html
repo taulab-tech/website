@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Company Page - by taulab</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            :root {
+                --white: #f5f5f5;
+                --tea-green: #d3e6ae;
+                --darkened-tea-green:#9CbF45;
+                --maize: #ffb300;
+                --blue-crayola: #003366;
+                --battleship-gray: #5a5a5a;
+                --onyx: #404040;
+                --eerie-black: #1e1e1e;
+
+                --primary-color: var(--tea-green);
+                --darkened-primary-color: var(--darkened-tea-green);
+                --secondary-color: var(--battleship-gray);
+                --accent-color: var(--onyx);
+                --complementary-color: var(--maize);
+                --background-color: var(--blue-crayola);
+                --cta-color: var(--blue-crayola);
+            }
+
+            html, body, div, span, h1,
+            h2, h3, h4, h5, h6 {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+
+            body {
+                line-height: 1.5;
+                background-color: var(--background-color);
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Page Wrapper */
+            #page-wrapper {
+                padding-top: 4em;
+            }
+
+            /* Header */
+            #header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: var(--secondary-color);
+                padding: 15px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 10000;
+            }
+
+            #header-logo-container {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            #header-logo-title {
+                display: inherit;
+                align-items: inherit;
+                text-decoration: none;
+            }
+            
+            #header-logo-title h1 {
+                margin: 0;
+                font-size: 21px;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
+            #header-logo {
+                height: 30px;
+                margin-right: 2.5px;
+            }
+
+            #header-links-container {
+                display: inherit;
+                justify-content: inherit;
+                align-items: center;
+                gap: 15px;
+            }
+
+            #header-links-container a {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            #header-links-container a:hover {
+                color: var(--darkened-primary-color);
+            }
+
+            /* Footer */
+            #footer {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center center;
+                background-color: var(--secondary-color);
+                padding: 15px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            #footer-logo-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #footer-logo-title {
+                display: inherit;
+                align-items: inherit;
+                text-decoration: none;
+            }
+            
+            #footer-logo-title h1 {
+                margin: 0;
+                font-size: 48px;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
+            #footer-logo {
+                height: 80px;
+                margin-right: 6.67px; 
+            }
+
+            #footer-seperator {
+                border-left: 1px solid var(--primary-color);
+                flex: 0 1;
+                margin: 0 10px;
+            }
+
+                .footer-table-column {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+
+                .footer-table-column h3 {
+                    font-size: 22px;
+                    font-weight: bold;
+                    color: var(--primary-color);
+                }
+
+                .footer-table-column ul {
+                    list-style-type: none;
+                    padding: 0;
+                    margin-bottom: 5px;
+                }
+
+                .footer-table-column li {
+                    margin-bottom: 5px;
+                }
+
+                .footer-table-column a {
+                    color: var(--primary-color);
+                    text-decoration: none;
+                    font-size: 16px;
+                }
+
+                .footer-table-column a:hover {
+                    color: var(--darkened-primary-color);
+                }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+
+            <!-- Header -->
+             <header id="header">
+                <div id="header-logo-container">
+                    <a href="taulab.html" id="header-logo-title">
+                        <img src="images/taulab-logo.png" id="header-logo" alt="Taulab Logo"/>
+                        <h1>Taulab</h1>
+                    </a>
+                </div>
+
+                <div id="header-links-container">
+                    <a href="/products.html">Products</a>
+                    <a href="/company.html">Company</a>
+                </div>
+             </header>
+
+             <!-- Main -->
+              
+
+             <!-- Footer -->
+             <footer id="footer">
+                <div id="footer-logo-container">
+                    <a href="taulab.html" id="footer-logo-title">
+                        <img src="images/taulab-logo.png" id="footer-logo" alt="Taulab Logo"/>
+                        <h1>Taulab</h1>
+                    </a>
+                </div>
+                <div id="footer-seperator"></div>
+                <div class="footer-table-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="/taulab.html">TauView</a></li>
+                        <li><a href="#">Monitoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-table-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/company.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+             </footer>
+        </div>
+    </body>
+</html>

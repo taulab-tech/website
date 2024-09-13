@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Taulab - by taulab</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            #page-wrapper {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                min-height: 100%;
+                object-fit: cover;
+            }
+
+            .hidden {
+                display: none; 
+            }
+
+            #banner {
+                display: none; 
+                text-align: center;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.5); 
+            }
+
+            #banner.show {
+                display: block !important; 
+            }
+
+            header {
+                background-image: url("images/banner.jpg");
+                background-attachment: fixed;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+            <video id="main-video" width="1920" height="1080" autoplay muted>
+                <source src="videos/main.mp4" type="video/mp4">
+                This browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            
+        </header>
+
+        <!-- Banner -->
+        <section id="banner">
+            <div>
+                <h2>Taulab</h2>
+                <p>Redefine<br />
+                    project management
+                </p>
+            </div>
+        </section>
+
+        <!-- Your custom script -->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
