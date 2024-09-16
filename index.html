@@ -144,12 +144,14 @@
                 }
             }
 
+           /* Container styles */
             #banner-text-container {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                padding: 0 10px;
             }
 
             #banner-text-container p {
@@ -163,6 +165,59 @@
                 overflow: hidden;
                 animation: typing 4s steps(50, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
             }
+
+            #banner-text-container p.rethink {
+                opacity: 1;
+            }
+
+            #banner-text-container p.strike-through {
+                text-decoration: line-through;
+                color: red;
+                opacity: 1;
+            }
+
+            #banner-text-container p.fade-out {
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+
+            #banner-text-container p.redefine {
+                opacity: 1; 
+                transition: opacity 1s ease-in-out;
+                visibility: visible;
+                animation: typing 8s steps(60, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+            }
+
+            @media (max-width: 1200px) {
+                #banner-text-container p {
+                    font-size: 40px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                #banner-text-container p {
+                    font-size: 32px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                #banner-text-container p {
+                    font-size: 24px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                #banner-text-container p {
+                    font-size: 18px;
+                }
+            }
+
+            @media (max-width: 375px) {
+                #banner-text-container p {
+                    font-size: 16px;
+                }
+            }
+
 
             #banner-text-container p.rethink {
                 opacity: 1;
