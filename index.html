@@ -81,6 +81,51 @@
                 opacity: 0;
             }
 
+            /* Tablets (Portrait) */
+            @media (max-width: 768px) {
+                #intro-video {
+                    width: 100%;
+                    height: auto;
+                    top: 0;
+                    left: 0;
+                    transform: none;
+                }
+
+                #banner-image {
+                    width: 100%;
+                    height: auto;
+                }
+
+                #banner-logo {
+                    width: 150px;
+                }
+            }
+
+            /* Mobile Devices (Portrait) */
+            @media (max-width: 480px) {
+                #intro-video {
+                    width: 100%;
+                    height: auto;
+                    top: 0;
+                    left: 0;
+                    transform: none;
+                }
+
+                #banner-image {
+                    width: 100%;
+                    height: auto;
+                }
+
+                #banner-logo {
+                    width: 100px;
+                }
+
+                .banner-foreground-container {
+                    height: auto;
+                    padding: 10px;
+                }
+            }
+
             @keyframes typing {
                 from {
                     width: 0;
