@@ -12,20 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             textContainer.style.visibility = 'visible';
             rethinkText.style.visibility = 'visible';
-        }, 3000);
+        }, 4000);
 
         setTimeout(function() {
             rethinkText.classList.add('rethink');
-        }, 3500);
+        }, 4500);
 
         setTimeout(function() {
             rethinkText.classList.add('strike-through');
-        }, 7000);
+        }, 8000);
 
         setTimeout(function() {
             rethinkText.classList.add('fade-out');
             redfineText.classList.add('redefine');
-        }, 10000);
+        }, 11000);
     });
 
     video.addEventListener('ended', function() {
