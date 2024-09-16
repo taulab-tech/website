@@ -186,6 +186,89 @@
                     font-size: 20px;
                 }
             }
+
+            /* Supporters Section */
+            #supporters-section {
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .supporter-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--card-color);
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 90%;
+            }
+
+            .supporter-header-container {
+                margin-bottom: 20px;
+            }
+
+            .supporter-header-container h1 {
+                font-size: 36px;
+                color: var(--darkened-primary-color);
+                margin: 0;
+            }
+
+            .supporter-seperator {
+                width: 80%; /* Thin line width */
+                height: 2px; /* Thin line height */
+                background-color: var(--darkened-primary-color); /* Line color */
+                margin: 10px 0;
+            }
+
+            .supporters-logos-container {
+                display: flex;
+                justify-content: center; /* Center logos horizontally */
+                flex-wrap: wrap; /* Wrap logos if they overflow */
+                gap: 20px; /* Space between logos */
+                width: 100%; /* Take full width */
+            }
+
+            .supporters-logos-container ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .supporters-logos-container li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--card-color);
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 200px;
+                height: 100px;
+            }
+
+            .supporters-logos-container img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                background: transparent;
+                display: block;
+            }
+
+            .supporters-message-container {
+                margin-top: 20px;
+            }
+
+            .supporters-message-container p {
+                font-size: 18px;
+                color: var(--darkened-primary-color);
+                text-align: center;
+            }
+
     </style>
     </head>
     <body>
@@ -211,93 +294,119 @@
              <!-- Main -->
               <main>
 
-                  <!-- Cards -->
-                 <section id="team-section">
-                     <section class="team-member-card profile">
-                         <div class="image">
-                             <img src="images/ceo-role.jpg" alt="Ceo Role Image"/>
-                         </div>
-                         <div class="team-member-profile-container">
-                             <div class="header">
-                                 <div class="picture">
-                                     <img src="images/colton.jpg" alt="Colton"/>
-                                 </div>
-                                 <div class="info-container">
-                                     <div class="name-container">
-                                         <h1>Colton Breitkreuz</h1>
-                                         <h2>CEO</h2>
-                                     </div>
-                                     <ul class="icon-container">
-                                        <li><i class="material-icons">terminal</i></li>
-                                         <li><i class="material-icons">power</i></li>
-                                         <li><i class="material-icons">rocket</i></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             <div class="description">
-                                 <p>
-                                    Colton Breitkreuz, an Electrical and Computer Science student at the University of Saskatchewan, is set to graduate in May 2025. Transitioning from his role as System Lead on RADSAT-SK, Colton now spearheads Taulab as its CEO. With a keen vision for innovation, Colton is dedicated to transforming how companies approach project management within the IoT fleet management sector. His leadership is focused on fostering growth, enhancing development opportunities, and driving impactful change in the industry. Colton’s forward-thinking approach promises to reshape project management paradigms and unlock new possibilities for future advancements.
-                                 </p>
-                             </div>
-                         </div>
-                     </section>
-                     <section class="team-member-card profile">
-                         <div class="image">
-                             <img src="images/hardware-lead.jpg" alt="Hardware Lead Image"/>
-                         </div>
-                         <div class="team-member-profile-container">
-                             <div class="header">
-                                 <div class="picture">
-                                     <img src="images/dylan.jpg" alt="Colton"/>
-                                 </div>
-                                 <div class="info-container">
-                                     <div class="name-container">
-                                         <h1>Dylan Haussecker</h1>
-                                         <h2>CFO & Hardware</h2>
-                                     </div>
-                                     <ul class="icon-container">
-                                        <li><i class="material-icons">terminal</i></li>
-                                         <li><i class="material-icons">power</i></li>
-                                         <li><i class="material-icons">rocket</i></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             <div class="description">
-                                 <p>
-                                    Dylan Haussecker, a graduate in Electrical Engineering and Computer Science from the University of Saskatchewan, serves as the Chief Financial Officer (CFO) and Hardware Lead at Taulab. With a strong background in hardware design and development, Dylan plays a crucial role in both the financial management and technical excellence of Taulab’s IoT fleet management solutions. His passion for space exploration drives his innovative approach, contributing to the company’s mission to revolutionize fleet management with cutting-edge technology. Dylan’s expertise ensures that Taulab’s hardware meets the highest standards of performance and reliability.
-                                 </p>
-                             </div>
-                         </div>
-                     </section>
-                     <section class="team-member-card profile">
-                         <div class="image">
-                             <img src="images/software-lead.jpg" alt="Software Lead Image"/>
-                         </div>
-                         <div class="team-member-profile-container">
-                             <div class="header">
-                                 <div class="picture">
-                                     <img src="images/nathan.jpg" alt="Colton"/>
-                                 </div>
-                                 <div class="info-container">
-                                     <div class="name-container">
-                                         <h1>Nathan Tsandelis</h1>
-                                         <h2>CTO & Software</h2>
-                                     </div>
-                                     <ul class="icon-container">
-                                         <li><i class="material-icons">terminal</i></li>
-                                         <li><i class="material-icons">laptop</i></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             <div class="description">
-                                 <p>
-                                    Nathan Tsandelis is a Computer Engineering graduate from the University of Saskatchewan, where he honed his skills in developing innovative software solutions. As the Chief Technology Officer (CTO) and Software Lead at Taulab, Nathan leverages his expertise to drive the creation of impactful and creative software that advances the company's mission in IoT fleet management. With a passion for staying active and a flair for creativity, Nathan is dedicated to crafting solutions that not only meet technical needs but also positively impact the world. His leadership ensures that Taulab remains at the forefront of technological advancement, delivering software that makes a meaningful difference.
-                                 </p>
-                             </div>
-                         </div>
-                     </section>
-                   </section>
+                <section id="company-section">
+
+                </section>
+
+                <!-- Team Card Section -->
+                <section id="team-section">
+                        <section class="team-member-card profile">
+                            <div class="image">
+                                <img src="images/ceo-role.jpg" alt="Ceo Role Image"/>
+                            </div>
+                            <div class="team-member-profile-container">
+                                <div class="header">
+                                    <div class="picture">
+                                        <img src="images/colton.jpg" alt="Colton"/>
+                                    </div>
+                                    <div class="info-container">
+                                        <div class="name-container">
+                                            <h1>Colton Breitkreuz</h1>
+                                            <h2>CEO</h2>
+                                        </div>
+                                        <ul class="icon-container">
+                                            <li><i class="material-icons">terminal</i></li>
+                                            <li><i class="material-icons">power</i></li>
+                                            <li><i class="material-icons">rocket</i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        Colton Breitkreuz, an Electrical and Computer Science student at the University of Saskatchewan, is set to graduate in May 2025. Transitioning from his role as System Lead on RADSAT-SK, Colton now spearheads Taulab as its CEO. With a keen vision for innovation, Colton is dedicated to transforming how companies approach project management within the IoT fleet management sector. His leadership is focused on fostering growth, enhancing development opportunities, and driving impactful change in the industry. Colton’s forward-thinking approach promises to reshape project management paradigms and unlock new possibilities for future advancements.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="team-member-card profile">
+                            <div class="image">
+                                <img src="images/hardware-lead.jpg" alt="Hardware Lead Image"/>
+                            </div>
+                            <div class="team-member-profile-container">
+                                <div class="header">
+                                    <div class="picture">
+                                        <img src="images/dylan.jpg" alt="Colton"/>
+                                    </div>
+                                    <div class="info-container">
+                                        <div class="name-container">
+                                            <h1>Dylan Haussecker</h1>
+                                            <h2>CFO & Hardware</h2>
+                                        </div>
+                                        <ul class="icon-container">
+                                            <li><i class="material-icons">terminal</i></li>
+                                            <li><i class="material-icons">power</i></li>
+                                            <li><i class="material-icons">rocket</i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        Dylan Haussecker, a graduate in Electrical Engineering and Computer Science from the University of Saskatchewan, serves as the Chief Financial Officer (CFO) and Hardware Lead at Taulab. With a strong background in hardware design and development, Dylan plays a crucial role in both the financial management and technical excellence of Taulab’s IoT fleet management solutions. His passion for space exploration drives his innovative approach, contributing to the company’s mission to revolutionize fleet management with cutting-edge technology. Dylan’s expertise ensures that Taulab’s hardware meets the highest standards of performance and reliability.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="team-member-card profile">
+                            <div class="image">
+                                <img src="images/software-lead.jpg" alt="Software Lead Image"/>
+                            </div>
+                            <div class="team-member-profile-container">
+                                <div class="header">
+                                    <div class="picture">
+                                        <img src="images/nathan.jpg" alt="Colton"/>
+                                    </div>
+                                    <div class="info-container">
+                                        <div class="name-container">
+                                            <h1>Nathan Tsandelis</h1>
+                                            <h2>CTO & Software</h2>
+                                        </div>
+                                        <ul class="icon-container">
+                                            <li><i class="material-icons">terminal</i></li>
+                                            <li><i class="material-icons">laptop</i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        Nathan Tsandelis is a Computer Engineering graduate from the University of Saskatchewan, where he honed his skills in developing innovative software solutions. As the Chief Technology Officer (CTO) and Software Lead at Taulab, Nathan leverages his expertise to drive the creation of impactful and creative software that advances the company's mission in IoT fleet management. With a passion for staying active and a flair for creativity, Nathan is dedicated to crafting solutions that not only meet technical needs but also positively impact the world. His leadership ensures that Taulab remains at the forefront of technological advancement, delivering software that makes a meaningful difference.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
               </main>
+
+              <!-- Supporters sections -->
+              <section id="supporters-section">
+                <section class="supporter-section">
+                    <div class="supporter-header-container">
+                        <h1>Supporters</h1>
+                    </div>
+                    <div class="supporter-seperator"></div>
+                    <div class="supporters-logos-container">
+                        <ul>
+                            <li>
+                                <a href="" id="footer-logo-title">
+                                    <img src="images/sigma-logo-final.png">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="supporters-message-container">
+                        <p>Thank you to the SIGMA program for all their support and expertise throughout the summer of 2024.</p>
+                    </div>
+                </section>
+              </section>
 
              <!-- Footer -->
             <footer id="footer">

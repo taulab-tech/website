@@ -13,7 +13,8 @@
     --battleship-gray: #5a5a5a;
     --onyx: #404040;
     --eerie-black: #1e1e1e;
-    --transparent: rgba(0, 0, 0, 1);
+    --translucent-color: rgba(90, 90, 90, 0.5);
+    --transparent-color: rgba(0, 0, 0, 0);
     
     --primary-color: var(--tea-green);
     --darkened-primary-color: var(--darkened-tea-green);
@@ -23,7 +24,8 @@
     --background-color: var(--blue-crayola);
     --cta-color: var(--eerie-black);
     --card-color: var(--white);
-    --transparent: var(--transparent);
+    --translucent: var(--translucent-color);
+    --transparent: var(--transparent-color);
     --text-color: var(--white);
 }
 
