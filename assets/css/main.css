@@ -1,24 +1,34 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 
-:root {
-    --white: #ffffff;
-    --tea-green: #eaffc1;
-    --maize: #ffee80;
-    --blue-crayola: #0078ff;
-    --battleship-gray: #909090;
-    --onyx: #404040;
-
-    --primary-color: var(--tea-green);
-    --secondary-color: var(--onyx);
-    --accent-color: var(--battleship-gray);
-    --complementary-color: var(--maize);
-    --background-color: var(--blue-crayola);
-    --cta-color: var(--blue-crayola);
-    --text-color: var(--onyx);
+* {
+    box-sizing: border-box;
 }
 
-html, body, div, span, 
-h1, h2, h3, h4, h5, h6 {
+:root {
+    --white: #f5f5f5;
+    --tea-green: #d3e6ae;
+    --darkened-tea-green:#9CbF45;
+    --maize: #ffb300;
+    --blue-crayola: #003366;
+    --battleship-gray: #5a5a5a;
+    --onyx: #404040;
+    --eerie-black: #1e1e1e;
+    --transparent: rgba(0, 0, 0, 1);
+    
+    --primary-color: var(--tea-green);
+    --darkened-primary-color: var(--darkened-tea-green);
+    --secondary-color: var(--battleship-gray);
+    --accent-color: var(--onyx);
+    --complementary-color: var(--maize);
+    --background-color: var(--blue-crayola);
+    --cta-color: var(--eerie-black);
+    --card-color: var(--white);
+    --text-color: var(--white);
+    --transparent: var(--transparent);
+}
+
+html, body, div, span, h1,
+h2, h3, h4, h5, h6, section {
     margin: 0;
     padding: 0;
     border: 0;
@@ -27,17 +37,28 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align: baseline;
 }
 
+footer, header {
+    display: block;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     line-height: 1.5;
     background-color: var(--background-color);
-    font-family: Arial, sans-serif; /* Add a clean font */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+.material-icons {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
 /* Page Wrapper */
 #page-wrapper {
-    padding-top: 4em; /* Adjust for the height of the fixed header */
+    padding-top: 4em;
 }
 
 /* Header */
@@ -45,117 +66,235 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
+    padding: 15px;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    transition: background-color 0.3s ease;
+    z-index: 10000;
 }
 
 #header-logo-container {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-#logo {
-    width: 40px; /* Larger logo for better visibility */
-    height: auto;
-    margin-right: 15px;
-}
-
-#logo-title {
-    display: flex;
-    align-items: center;
+#header-logo-title {
+    display: inherit;
+    align-items: inherit;
     text-decoration: none;
 }
 
-#logo-title h1 {
-    color: var(--secondary-color);
-    font-size: 28px; /* Larger title for impact */
-    margin: 0; /* Remove default margin */
-    font-weight: bold; /* Add emphasis */
-    transition: color 0.3s ease; /* Smooth color transition */
+#header-logo-title h1 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 1px 2px black;
 }
 
-.header-link-container {
-    display: flex;
+#header-logo {
+    height: 30px;
+    margin-right: 2.5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px black;
+}
+
+#header-links-container {
+    display: inherit;
+    justify-content: inherit;
     align-items: center;
-    flex-grow: 1; /* Allow it to take available space */
-    overflow: hidden;
-    justify-content: flex-end; /* Align items to the right */
+    gap: 15px;
 }
 
-.header-link-list {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 1px; /* Space between links */
-    background: var(--background-color); /* Matches background color */
-    border-radius: 5px; /* Rounded corners for the container */
-    padding: 0; /* Remove padding to avoid extra space */
-    margin: 0; /* Remove margin to avoid extra space */
-}
-
-.header-link {
+#header-links-container a {
+    color: var(--primary-color);
     text-decoration: none;
-    color: var(--secondary-color);
-    padding: 12px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 18px;
-    white-space: nowrap;
-    display: inline-block;
-    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.header-link:not(:last-child) {
-    position: relative;
-    overflow: hidden; /* Hide overflow of gradient border */
+#header-links-container a:hover {
+    color: var(--darkened-primary-color);
 }
 
-.header-link:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px; /* Thin line */
-    height: 100%;
-    background: linear-gradient(to top, var(--secondary-color), var(--accent-color));
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #header {
+        padding: 10px;
+    }
+
+    #header-logo-title h1 {
+        font-size: 18px;
+    }
+
+    #header-logo {
+        height: 25px;
+    }
+
+    #header-links-container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    #header-links-container a {
+        font-size: 14px;
+    }
 }
 
-.header-link:hover {
-    background: linear-gradient(
-        to bottom, var(--primary-color) 0%, 
-        var(--secondary-color) 15%,
-        var(--secondary-color) 85%,
-        var(--primary-color) 100%);
-    color: var(--accent-color);
+@media (max-width: 480px) {
+    #header {
+        padding: 8px;
+    }
+
+    #header-logo-title h1 {
+        font-size: 16px;
+    }
+
+    #header-logo {
+        height: 20px;
+    }
+
+    #header-links-container {
+        gap: 8px;
+    }
+
+    #header-links-container a {
+        font-size: 12px;
+    }
 }
 
 /* Footer */
 #footer {
-    background-color: var(--battleship-gray);
-    text-align: center;
-    padding: 20px 0; /* Add padding */
-    color: var(--secondary-color); /* Consistent text color */
-    font-size: 14px; /* Smaller text size */
-}
-
-.coming-soon-container {
-    height: 100vh;
-    background-image: url('/images/taulab-banner.png');
-    background-size: fit;
-    background-position: top;
     display: flex;
-    position: relative
+    justify-content: space-evenly;
+    align-items: center center;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
-.coming-soon-container h1 {
-    font-size: 3rem;
-    color: white;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
-    margin-top: 20px;
-    margin-left: 20px;
+#footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-logo-title {
+    display: inherit;
+    align-items: inherit;
+    text-decoration: none;
+}
+
+#footer-logo-title h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 2px 4px black;
+}
+
+#footer-logo {
+    height: 80px;
+    margin-right: 6.67px;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px black;
+}
+
+#footer-seperator {
+    border-left: 1px solid var(--primary-color);
+    flex: 0 1;
+    margin: 0 10px;
+}
+
+.footer-table-column {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.footer-table-column h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.footer-table-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.footer-table-column li {
+    margin-bottom: 5px;
+}
+
+.footer-table-column a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-table-column a:hover {
+    color: var(--darkened-primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #footer {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #footer-logo-title h1 {
+        font-size: 36px;
+    }
+
+    #footer-logo {
+        height: 60px;
+    }
+
+    #footer-seperator {
+        display: none;
+    }
+
+    .footer-table-column {
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-table-column h3 {
+        font-size: 18px;
+    }
+
+    .footer-table-column a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #footer {
+        padding: 8px;
+    }
+
+    #footer-logo-title h1 {
+        font-size: 28px;
+    }
+
+    #footer-logo {
+        height: 50px;
+    }
+
+    .footer-table-column h3 {
+        font-size: 16px;
+    }
+
+    .footer-table-column a {
+        font-size: 12px;
+    }
 }

@@ -1,16 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var video = document.getElementById('main-video');
-    var banner = document.getElementById('banner');
+    var video = document.getElementById('intro-video');
+    var bannerLogo = document.getElementById('banner-logo');
+    var rethinkText = document.querySelector('#banner-text-container p:first-child');
+    var redfineText = document.querySelector('#banner-text-container p:last-child');
+    var textContainer = document.getElementById('banner-text-container');
 
-    // Play video on start
     video.addEventListener('play', function() {
         video.play();
+        bannerLogo.classList.add('hide');
+
+        setTimeout(function() {
+            textContainer.style.visibility = 'visible';
+            rethinkText.style.visibility = 'visible';
+        }, 3000);
+
+        setTimeout(function() {
+            rethinkText.classList.add('rethink');
+        }, 3500);
+
+        setTimeout(function() {
+            rethinkText.classList.add('strike-through');
+        }, 7000);
+
+        setTimeout(function() {
+            rethinkText.classList.add('fade-out');
+            redfineText.classList.add('redefine');
+        }, 10000);
     });
 
-    // Show banner and hide video when video ends
     video.addEventListener('ended', function() {
-        console.log('Video ended'); // Debugging line
-        video.classList.add('hidden'); // Hide the video
-        banner.classList.add('show'); // Show the banner
+        console.log('Video ended');
+        video.classList.add('hide');
     });
 });

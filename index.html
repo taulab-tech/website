@@ -1,500 +1,156 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Company Page - by taulab</title>
+        <title>Taulab Home Page - by taulab</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/main.css"/>
         <style>
-            * {
-                box-sizing: border-box;
-            }
-
-            :root {
-                --white: #f5f5f5;
-                --tea-green: #d3e6ae;
-                --darkened-tea-green:#9CbF45;
-                --maize: #ffb300;
-                --blue-crayola: #003366;
-                --battleship-gray: #5a5a5a;
-                --onyx: #404040;
-                --eerie-black: #1e1e1e;
-
-                --primary-color: var(--tea-green);
-                --darkened-primary-color: var(--darkened-tea-green);
-                --secondary-color: var(--battleship-gray);
-                --accent-color: var(--onyx);
-                --complementary-color: var(--maize);
-                --background-color: var(--blue-crayola);
-                --cta-color: var(--eerie-black);
-                --card-color: var(--white);
-                --text-color: var(--white);
-            }
-
-            html, body, div, span, h1,
-            h2, h3, h4, h5, h6, section {
-                margin: 0;
-                padding: 0;
-                border: 0;
-                font-size: 100%;
-                font: inherit;
-                vertical-align: baseline;
-            }
-
-            footer, header {
-                display: block;
-            }
-
-            body {
-                display: flex;
-                flex-direction: column;
-                line-height: 1.5;
-                background-color: var(--background-color);
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-
-            .material-icons {
-                font-size: 24px;
-                color: var(--primary-color);
-            }
-
-            /* Page Wrapper */
-            #page-wrapper {
-                padding-top: 4em;
-            }
-
-            /* Header */
             #header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: var(--secondary-color);
-                padding: 15px;
-                position: fixed;
+                background-color: var(--transparent);
+            }
+            
+            .hidden {
+                display: none; 
+            }
+            
+            #banner-background-container {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            #banner-image {
+                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                z-index: 10000;
+                height: 100%;
+                object-fit: cover;
+                opacity: 1;
+                visibility: visible;
+                z-index: 1; /* Background. Below the video. */
             }
 
-            #header-logo-container {
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
+            #intro-video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                z-index: 2; /* Middle ground. About the background image. */
+                opacity: 1;
+                transition: opacity 2s ease-in-out;
             }
 
-            #header-logo-title {
-                display: inherit;
-                align-items: inherit;
-                text-decoration: none;
+            #intro-video.hide {
+                opacity: 0;
             }
 
-            #header-logo-title h1 {
-                margin: 0;
-                font-size: 21px;
-                font-weight: bold;
-                color: var(--primary-color);
-                text-shadow: 0 1px 2px black;
-            }
-
-            #header-logo {
-                height: 30px;
-                margin-right: 2.5px;
-                border-radius: 4px;
-                box-shadow: 0 1px 2px black;
-            }
-
-            #header-links-container {
-                display: inherit;
-                justify-content: inherit;
-                align-items: center;
-                gap: 15px;
-            }
-
-            #header-links-container a {
-                color: var(--primary-color);
-                text-decoration: none;
-                font-size: 16px;
-                font-weight: bold;
-            }
-
-            #header-links-container a:hover {
-                color: var(--darkened-primary-color);
-            }
-
-            /* Responsive Styles */
-            @media (max-width: 768px) {
-                #header {
-                    padding: 10px;
-                }
-
-                #header-logo-title h1 {
-                    font-size: 18px;
-                }
-
-                #header-logo {
-                    height: 25px;
-                }
-
-                #header-links-container {
-                    flex-direction: column;
-                    gap: 10px;
-                    align-items: flex-start;
-                }
-
-                #header-links-container a {
-                    font-size: 14px;
-                }
-            }
-
-            @media (max-width: 480px) {
-                #header {
-                    padding: 8px;
-                }
-
-                #header-logo-title h1 {
-                    font-size: 16px;
-                }
-
-                #header-logo {
-                    height: 20px;
-                }
-
-                #header-links-container {
-                    gap: 8px;
-                }
-
-                #header-links-container a {
-                    font-size: 12px;
-                }
-            }
-
-            /* Footer */
-            #footer {
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center center;
-                background-color: var(--secondary-color);
-                padding: 15px;
-                bottom: 0;
+            .banner-foreground-container {
+                position: absolute;
+                top: 0;
                 left: 0;
-                width: 100%;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 3; /* Foreground. Above video and image. */
             }
 
-            #footer-logo-container {
+            #banner-logo-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
 
-            #footer-logo-title {
-                display: inherit;
-                align-items: inherit;
-                text-decoration: none;
-            }
-
-            #footer-logo-title h1 {
-                margin: 0;
-                font-size: 48px;
-                font-weight: bold;
-                color: var(--primary-color);
-                text-shadow: 0 2px 4px black;
-            }
-
-            #footer-logo {
-                height: 80px;
-                margin-right: 6.67px;
-                border-radius: 14px;
-                box-shadow: 0 2px 4px black;
-            }
-
-            #footer-seperator {
-                border-left: 1px solid var(--primary-color);
-                flex: 0 1;
-                margin: 0 10px;
-            }
-
-            .footer-table-column {
-                display: flex;
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .footer-table-column h3 {
-                font-size: 22px;
-                font-weight: bold;
-                color: var(--primary-color);
-            }
-
-            .footer-table-column ul {
-                list-style-type: none;
-                padding: 0;
-                margin-bottom: 5px;
-            }
-
-            .footer-table-column li {
-                margin-bottom: 5px;
-            }
-
-            .footer-table-column a {
-                color: var(--primary-color);
-                text-decoration: none;
-                font-size: 16px;
-            }
-
-            .footer-table-column a:hover {
-                color: var(--darkened-primary-color);
-            }
-
-            /* Responsive Styles */
-            @media (max-width: 768px) {
-                #footer {
-                    flex-direction: column;
-                    padding: 10px;
-                }
-
-                #footer-logo-title h1 {
-                    font-size: 36px;
-                }
-
-                #footer-logo {
-                    height: 60px;
-                }
-
-                #footer-seperator {
-                    display: none;
-                }
-
-                .footer-table-column {
-                    align-items: center;
-                    margin-bottom: 10px;
-                }
-
-                .footer-table-column h3 {
-                    font-size: 18px;
-                }
-
-                .footer-table-column a {
-                    font-size: 14px;
-                }
-            }
-
-            @media (max-width: 480px) {
-                #footer {
-                    padding: 8px;
-                }
-
-                #footer-logo-title h1 {
-                    font-size: 28px;
-                }
-
-                #footer-logo {
-                    height: 50px;
-                }
-
-                .footer-table-column h3 {
-                    font-size: 16px;
-                }
-
-                .footer-table-column a {
-                    font-size: 12px;
-                }
-            }
-
-
-            /* Team Section */
-            #team-section {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                margin: 0;
-                padding: 0;
-            }
-
-            .team-member-card {
-                width: 30%;
-                display: flex;
-                align-items: center;
-                background-color: var(--card-color);
-                padding: 30px;
-                margin: 20px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                border-radius: 20px;
-                gap: 25px;
-            }
-
-            .team-member-card.profile {
-                width: 90%;
-            }
-
-            .team-member-card .image {
-                width: 50%;
-            }
-
-            .team-member-card .image img {
-                width: 100%;
+            #banner-logo {
+                width: 200px;
                 height: auto;
-                border-radius: 10px;
+                opacity: 1;
+                transition: opacity 2s ease-in-out;
             }
 
-            @media (min-width: 769px) {
-                /* Apply row-reverse only on larger screens */
-                .team-member-card:nth-child(2n) {
-                    flex-direction: row-reverse;
+            #banner-logo.hide {
+                opacity: 0;
+            }
+
+            @keyframes typing {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
                 }
             }
 
-            /* Team Member Profile Container */
-            .team-member-profile-container {
+            @keyframes blink-caret {
+                from, to {
+                    border-color: transparent;
+                }
+                50% {
+                    border-color: currentColor;
+                }
+            }
+
+            #banner-text-container {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                width: 100%;
-                background-color: var(--secondary-color);
-                padding: 30px;
-                border-radius: 20px;
-            }
-
-            .team-member-profile-container .header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background-color: var(--primary-color);
-                border-radius: 20px;
-                padding: 20px;
-                gap: 25px;
-            }
-
-            .team-member-profile-container .description {
-                width: 70%;
                 text-align: center;
             }
 
-            .team-member-profile-container .description p {
-                color: var(--text-color);
-                line-height: 1.6;
-                margin-top: 15px;
+            #banner-text-container p {
+                font-size: 48px;
+                margin: 5px 0;
+                color: var(--maize);
+                opacity: 0;
+                transition: all 1s ease-in-out;
+                font-family: 'Cactus Classical Serif';
+                white-space: nowrap;
+                overflow: hidden;
+                animation: typing 4s steps(50, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
             }
 
-            .info-container {
-                display: block;
-                align-items: center;
+            #banner-text-container p.rethink {
+                opacity: 1;
             }
 
-            .name-container h1 {
-                color: var(--secondary-color);
-                font-size: 26px;
-                font-weight: bold;
+            #banner-text-container p.strike-through {
+                text-decoration: line-through;
+                color: red;
+                opacity: 1;
             }
 
-            .icon-container {
-                display: flex;
-                list-style: none;
-                margin-left: auto;
-                padding-left: 0;
-                gap: 10px;
+            #banner-text-container p.fade-out {
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
             }
 
-            .icon-container li {
-                display: flex;
-                align-items: center;
+            #banner-text-container p.redefine {
+                opacity: 1; 
+                transition: opacity 1s ease-in-out;
+                visibility: visible;
+                animation: typing 8s steps(60, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
             }
-
-            .icon-container li i {
-                font-size: 24px;
-                color: var(--secondary-color);
-            }
-
-            .header .picture img {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                border: 4px solid var(--secondary-color);
-            }
-
-            /* Responsive Styles */
-            @media (max-width: 768px) {
-                .team-member-card {
-                    width: 90%;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .team-member-card .image {
-                    width: 100%;
-                }
-
-                .team-member-profile-container .header {
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 15px;
-                }
-
-                .team-member-profile-container .description {
-                    width: 100%;
-                    text-align: left;
-                    padding-left: 0;
-                }
-
-                .info-container {
-                    align-items: center;
-                }
-
-                .name-container h1 {
-                    font-size: 22px;
-                }
-
-                .name-container h2 {
-                    font-size: 18px;
-                }
-
-                .icon-container {
-                    margin-left: 0;
-                    padding-left: 0;
-                    justify-content: center;
-                    gap: 10px;
-                }
-
-                .icon-container li i {
-                    font-size: 22px;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .team-member-card {
-                    width: 100%;
-                }
-
-                .team-member-profile-container .header {
-                    padding: 10px;
-                }
-
-                .name-container h1 {
-                    font-size: 20px;
-                }
-
-                .name-container h2 {
-                    font-size: 16px;
-                }
-
-                .icon-container li i {
-                    font-size: 20px;
-                }
-            }
-
     </style>
+        </style>
     </head>
     <body>
 
         <!-- Page Wrapper -->
         <div id="page-wrapper">
-
             <!-- Header -->
-             <header id="header">
+            <header id="header">
                 <div id="header-logo-container">
-                    <a href="/comingsoon" id="header-logo-title">
+                    <a href="/" id="header-logo-title">
                         <img src="images/taulab-logo.png" id="header-logo" alt="Taulab Logo"/>
                         <h1>Taulab</h1>
                     </a>
@@ -502,105 +158,40 @@
 
                 <div id="header-links-container">
                     <a href="/comingsoon">Products</a>
-                    <a href="/comingsoon">Company</a>
+                    <a href="/team">Company</a>
                 </div>
-             </header>
+            </header>
 
-             <!-- Main -->
-              <main>
+            <!-- Banner -->
+            <section id="banner">
+                <div id="banner-background-container"></div>
+                    <video id="intro-video" width="1920" height="1080" autoplay muted>
+                        <source src="videos/main.mp4" type="video/mp4">
+                        This browser does not support the video tag.
+                    </video>
+                    <img src="images/banner.jpg" id="banner-image" alt="Banner Background Image."/>
+                </div>
+                <div class="banner-foreground-container">
+                    <div id="banner-logo-container">
+                        <img src="images/taulab-logo.png" id="banner-logo" alt="Taulab Logo"/>
+                    </div>
+                </div>
+                <div class="banner-foreground-container">
+                    <div id="banner-text-container">
+                        <p>Rethink
+                            project management
+                        </p>
+                        <p>Redefine
+                            project management
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-                  <!-- Cards -->
-                 <section id="team-section">
-                     <section class="team-member-card profile">
-                         <div class="image">
-                             <img src="images/ceo-role.jpg" alt="Ceo Role Image"/>
-                         </div>
-                         <div class="team-member-profile-container">
-                             <div class="header">
-                                 <div class="picture">
-                                     <img src="images/colton.jpg" alt="Colton"/>
-                                 </div>
-                                 <div class="info-container">
-                                     <div class="name-container">
-                                         <h1>Colton Breitkreuz</h1>
-                                         <h2>CEO</h2>
-                                     </div>
-                                     <ul class="icon-container">
-                                        <li><i class="material-icons">terminal</i></li>
-                                         <li><i class="material-icons">power</i></li>
-                                         <li><i class="material-icons">rocket</i></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             <div class="description">
-                                 <p>
-                                    Colton Breitkreuz, an Electrical and Computer Science student at the University of Saskatchewan, is set to graduate in May 2025. Transitioning from his role as System Lead on RADSAT-SK, Colton now spearheads Taulab as its CEO. With a keen vision for innovation, Colton is dedicated to transforming how companies approach project management within the IoT fleet management sector. His leadership is focused on fostering growth, enhancing development opportunities, and driving impactful change in the industry. Colton’s forward-thinking approach promises to reshape project management paradigms and unlock new possibilities for future advancements.
-                                 </p>
-                             </div>
-                         </div>
-                     </section>
-                     <section class="team-member-card profile">
-                         <div class="image">
-                             <img src="images/hardware-lead.jpg" alt="Hardware Lead Image"/>
-                         </div>
-                         <div class="team-member-profile-container">
-                             <div class="header">
-                                 <div class="picture">
-                                     <img src="images/dylan.jpg" alt="Colton"/>
-                                 </div>
-                                 <div class="info-container">
-                                     <div class="name-container">
-                                         <h1>Dylan Haussecker</h1>
-                                         <h2>CFO & Hardware</h2>
-                                     </div>
-                                     <ul class="icon-container">
-                                        <li><i class="material-icons">terminal</i></li>
-                                         <li><i class="material-icons">power</i></li>
-                                         <li><i class="material-icons">rocket</i></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             <div class="description">
-                                 <p>
-                                    Dylan Haussecker, a graduate in Electrical Engineering and Computer Science from the University of Saskatchewan, serves as the Chief Financial Officer (CFO) and Hardware Lead at Taulab. With a strong background in hardware design and development, Dylan plays a crucial role in both the financial management and technical excellence of Taulab’s IoT fleet management solutions. His passion for space exploration drives his innovative approach, contributing to the company’s mission to revolutionize fleet management with cutting-edge technology. Dylan’s expertise ensures that Taulab’s hardware meets the highest standards of performance and reliability.
-                                 </p>
-                             </div>
-                         </div>
-                     </section>
-                     <section class="team-member-card profile">
-                         <div class="image">
-                             <img src="images/software-lead.jpg" alt="Software Lead Image"/>
-                         </div>
-                         <div class="team-member-profile-container">
-                             <div class="header">
-                                 <div class="picture">
-                                     <img src="images/nathan.jpg" alt="Colton"/>
-                                 </div>
-                                 <div class="info-container">
-                                     <div class="name-container">
-                                         <h1>Nathan Tsandelis</h1>
-                                         <h2>CTO & Software</h2>
-                                     </div>
-                                     <ul class="icon-container">
-                                         <li><i class="material-icons">terminal</i></li>
-                                         <li><i class="material-icons">laptop</i></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             <div class="description">
-                                 <p>
-                                    Nathan Tsandelis is a Computer Engineering graduate from the University of Saskatchewan, where he honed his skills in developing innovative software solutions. As the Chief Technology Officer (CTO) and Software Lead at Taulab, Nathan leverages his expertise to drive the creation of impactful and creative software that advances the company's mission in IoT fleet management. With a passion for staying active and a flair for creativity, Nathan is dedicated to crafting solutions that not only meet technical needs but also positively impact the world. His leadership ensures that Taulab remains at the forefront of technological advancement, delivering software that makes a meaningful difference.
-                                 </p>
-                             </div>
-                         </div>
-                     </section>
-                   </section>
-              </main>
-
-             <!-- Footer -->
-             <footer id="footer">
+            <!-- Footer -->
+            <footer id="footer">
                 <div id="footer-logo-container">
-                    <a href="taulab.html" id="footer-logo-title">
+                    <a href="/" id="footer-logo-title">
                         <img src="images/taulab-logo.png" id="footer-logo" alt="Taulab Logo"/>
                         <h1>Taulab</h1>
                     </a>
@@ -617,11 +208,14 @@
                     <h3>Company</h3>
                     <ul>
                         <li><a href="/comingsoon">About</a></li>
-                        <li><a href="/">Team</a></li>
+                        <li><a href="/team">Team</a></li>
                         <li><a href="/comingsoon">Contact</a></li>
                     </ul>
                 </div>
             </footer>
         </div>
+
+        <!-- Your custom script -->
+        <script src="assets/js/main.js"></script>
     </body>
 </html>
