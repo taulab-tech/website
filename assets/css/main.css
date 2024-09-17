@@ -81,6 +81,14 @@ body {
     z-index: 10000;
 }
 
+#header.transparent {
+    background-color: var(--transparent-color);
+}
+
+#header.secondary-color {
+    background-color: var(--secondary-color);
+}
+
 #header-logo-container {
     display: flex;
     justify-content: space-evenly;

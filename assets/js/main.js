@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var rethinkText = document.querySelector('#banner-text-container p:first-child');
     var redfineText = document.querySelector('#banner-text-container p:last-child');
     var textContainer = document.getElementById('banner-text-container');
+    var header = document.getElementById('#header');
 
     video.addEventListener('play', function() {
         video.play();
