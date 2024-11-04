@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Message for Rachel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffe6e6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 50px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .message {
+            font-size: 36px;
+            color: #ff3366;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .image {
+            width: 60%;
+            max-width: 500px;
+            margin: 20px 0;
+            border: 5px solid black; /* Fancy border */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: transform 0.3s;
+        }
+
+        .image:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content-1">
+        <div class="message">I know I don't remind you enough.</div>
+    </div>
+
+    <div class="container" id="content-2">
+        <img class="image" src="./images/temp/image1.PNG" alt="Romantic Image 1">
+    </div>
+
+    <div class="container" id="content-3">
+        <div class="message">But I want you to know one thing for sure.</div>
+    </div>
+
+    <div class="container" id="content-4">
+        <img class="image" src="./images/temp/image2.jpg" alt="Romantic Image 2">
+    </div>
+
+    <div class="container" id="content-5">
+        <div class="message">I love you, Rachel Petersen ❤️</div>
+    </div>
+
+    <div class="container" id="content-6">
+        <img class="image" src="./images/temp/image3.jpg" alt="Romantic Image 3">
+    </div>
+
+    <!-- Add more images as needed -->
+    <div class="container" id="content-7">
+        <img class="image" src="./images/temp/image4.jpg" alt="Romantic Image 4">
+    </div>
+    <div class="container" id="content-8">
+        <img class="image" src="./images/temp/image5.jpg" alt="Romantic Image 5">
+    </div>
+    <div class="container" id="content-9">
+        <img class="image" src="./images/temp/image6.jpg" alt="Romantic Image 6">
+    </div>
+    <div class="container" id="content-10">
+        <img class="image" src="images/temp/image7.jpeg" alt="Romantic Image 7">
+    </div>
+
+    <script>
+        const containers = document.querySelectorAll('.container');
+
+        window.addEventListener('scroll', () => {
+            containers.forEach(container => {
+                const rect = container.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    container.classList.add('visible');
+                } else {
+                    container.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
